@@ -72,7 +72,7 @@ MonoBehaviour:
   CharacterMovement: {fileID: 1078952287445758245}
   PlayerRigidBody: {fileID: 1078952287445758298}
   PlayerMoveSpeed: 3
-  PlayerRotationSpeed: 0.5
+  PlayerRotationSpeed: 0.1
   currentMovement: {x: 0, y: 0}
 --- !u!114 &1078952287445758245
 MonoBehaviour:
@@ -100,7 +100,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.02, y: 0}
-  m_Size: {x: 0.1, y: 0.25}
+  m_Size: {x: 0.1, y: 0.14502797}
   m_Direction: 0
 --- !u!1 &1078952288202058829
 GameObject:
@@ -184,4 +184,4 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
