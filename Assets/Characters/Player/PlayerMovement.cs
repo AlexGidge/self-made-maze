@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public float PlayerMoveSpeed;
     public float PlayerRotationSpeed;
 
-    [SerializeField] private Vector2 currentMovement;
+    [SerializeField] internal Vector2 currentMovement;
+    [SerializeField] internal Quaternion currentRotation => transform.rotation;
     
     // Start is called before the first frame update
     void Start()
