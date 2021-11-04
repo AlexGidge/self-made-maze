@@ -9,11 +9,14 @@ public class PlayerCombat : CharacterCombat
     
     public PlayerMovement PlayerMovement;
 
+    public AudioSource CombatSFXSource;
+
     public GameObject BulletPrefab;
     
     private void Start()
     {
         RegisterEvents();
+        base.BulletAudioSource = CombatSFXSource;
     }
 
     private void RegisterEvents()

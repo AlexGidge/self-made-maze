@@ -11167,14 +11167,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 735194114, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
+      propertyPath: m_Pitch
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 735194114, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1078952287445758244, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
       propertyPath: PlayerInput
       value: 
       objectReference: {fileID: 1841117000}
-    - target: {fileID: 1078952287445758244, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: PlayerDashDelay
-      value: 0.75
-      objectReference: {fileID: 0}
     - target: {fileID: 1078952287445758296, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
       propertyPath: m_Name
       value: Player

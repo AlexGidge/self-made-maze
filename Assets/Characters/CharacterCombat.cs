@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class CharacterCombat : MonoBehaviour
 {
+    internal AudioSource BulletAudioSource;
+
     internal void FireBullet(GameObject bulletPrefab, Quaternion direction)
     {
         GameObject bullet = Instantiate(bulletPrefab);
@@ -13,6 +15,7 @@ public abstract class CharacterCombat : MonoBehaviour
         {
             bullet.transform.rotation = direction;
             bulletController.FireBullet(direction);
+            BulletAudioSource.PlayOneShot(BulletAudioSource.clip);
         }
     }
 }

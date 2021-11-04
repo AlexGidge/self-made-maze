@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
     public PlayerInput PlayerInput;
     public CharacterMovement CharacterMovement;
 
+    public AudioSource DashAudio;
+
     public Rigidbody2D PlayerRigidBody;
     public float PlayerMoveSpeed;
     public float PlayerRotationSpeed;
@@ -20,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         RegisterEvents();
-        CharacterMovement.Initialise(PlayerRigidBody, PlayerMoveSpeed, PlayerRotationSpeed, PlayerDashSpeed, PlayerDashDelay);
+        CharacterMovement.Initialise(PlayerRigidBody, PlayerMoveSpeed, PlayerRotationSpeed, PlayerDashSpeed, PlayerDashDelay, DashAudio);
     }
 
     private void RegisterEvents()
