@@ -72,8 +72,8 @@ MonoBehaviour:
   PlayerInput: {fileID: 0}
   CharacterMovement: {fileID: 1078952287445758245}
   PlayerRigidBody: {fileID: 1078952287445758298}
-  PlayerMoveSpeed: 4
-  PlayerRotationSpeed: 0.08
+  PlayerMoveSpeed: 5
+  PlayerRotationSpeed: 0.06
   currentMovement: {x: 0, y: 0}
 --- !u!114 &4374680096749005894
 MonoBehaviour:
