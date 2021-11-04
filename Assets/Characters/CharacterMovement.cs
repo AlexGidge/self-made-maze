@@ -11,14 +11,14 @@ public class CharacterMovement : MonoBehaviour
     private bool initialised;
 
     protected AudioSource DashAudio;
-
+    protected ParticleSystem DashParticles;
 
     private float lastDash;
     public GameObject TargetObject { get; set; }
     public Quaternion TargetRotation { get; set; }
 
     public void Initialise(Rigidbody2D rigidBody, float moveSpeed, float rotationSpeed, float dashSpeed,
-        float dashDelay, AudioSource dashAudio)
+        float dashDelay, AudioSource dashAudio, ParticleSystem dashParticles)
     {
         if (!initialised)
         {
@@ -28,6 +28,7 @@ public class CharacterMovement : MonoBehaviour
             DashSpeed = dashSpeed;
             DashDelay = dashDelay;
             DashAudio = dashAudio;
+            DashParticles = dashParticles;
             initialised = true;
         }
     }
@@ -49,6 +50,7 @@ public class CharacterMovement : MonoBehaviour
             lastDash = Time.time;
             CharacterBody.AddForce(movement * DashSpeed);
             DashAudio.PlayOneShot(DashAudio.clip);
+            DashParticles.Play();
         }
     }
 

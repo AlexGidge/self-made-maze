@@ -11337,5 +11337,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shadow
       objectReference: {fileID: 0}
+    - target: {fileID: 2737983353584564605, guid: 5d2c3acd69d92ea4fb1de6b7fb01897a, type: 3}
+      propertyPath: maxHealth
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2c3acd69d92ea4fb1de6b7fb01897a, type: 3}

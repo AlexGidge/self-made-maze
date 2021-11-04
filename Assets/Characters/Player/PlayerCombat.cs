@@ -1,7 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCombat : CharacterCombat
 {
@@ -9,19 +8,26 @@ public class PlayerCombat : CharacterCombat
     
     public PlayerMovement PlayerMovement;
 
-    public AudioSource CombatSFXSource;
-
     public GameObject BulletPrefab;
-    
-    private void Start()
+
+    private void OnEnable()
     {
         RegisterEvents();
-        base.BulletAudioSource = CombatSFXSource;
     }
 
     private void RegisterEvents()
     {
         PlayerInput.Events.OnWeaponFired += Fire;
+    }
+
+    private void OnDisable()
+    {
+        DeRegisterEvents();
+    }
+    
+    private void DeRegisterEvents()
+    {
+        PlayerInput.Events.OnWeaponFired -= Fire;
     }
 
     void Fire()
@@ -30,5 +36,9 @@ public class PlayerCombat : CharacterCombat
         FireBullet(BulletPrefab, playerDirection);
     }
 
-
+    public override void Die()
+    {
+        //TODO: PlayerDeath
+        SceneManager.LoadScene("Game");
+    }
 }

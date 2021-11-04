@@ -15,4 +15,7 @@ public class AIMovement : MonoBehaviour
     {
         
     }
+    
+    //TODO: Move sequence around the room in random directions
+    //Trigger collider to slow and stop before a wall, then repeat
 }

@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         RegisterEvents();
-        CharacterMovement.Initialise(PlayerRigidBody, PlayerMoveSpeed, PlayerRotationSpeed, PlayerDashSpeed, PlayerDashDelay, DashAudio);
+        CharacterMovement.Initialise(PlayerRigidBody, PlayerMoveSpeed, PlayerRotationSpeed, PlayerDashSpeed, PlayerDashDelay, DashAudio, DashParticles);
     }
 
     private void RegisterEvents()
@@ -43,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
     private void Dash()
     {
         CharacterMovement.Dash(PlayerInput.MovementVector);
-        DashParticles.Play();
     }
     
     private void LookAtPoint(Vector3 point)
