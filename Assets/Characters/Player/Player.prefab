@@ -4977,16 +4977,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c524ad3e746e4ac41ac039b5dc8154ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerInput: {fileID: 0}
-  CharacterMovement: {fileID: 1078952287445758245}
+  CharacterBody: {fileID: 1078952287445758298}
+  MoveSpeed: 5
+  RotationSpeed: 0.7
+  DashSpeed: 10
+  DashDelay: 0.9
   DashAudio: {fileID: 3148203485845418955}
   DashParticles: {fileID: 1349353299}
-  PlayerRigidBody: {fileID: 1078952287445758298}
-  PlayerMoveSpeed: 5
-  PlayerRotationSpeed: 0.07
-  PlayerDashDelay: 0.75
-  PlayerDashSpeed: 100
-  currentMovement: {x: 0, y: 0}
+  PlayerInput: {fileID: 0}
 --- !u!114 &4374680096749005894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5019,6 +5017,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a109c4aee7eadaf4f920e6acc337a4e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CharacterBody: {fileID: 0}
+  MoveSpeed: 0
+  RotationSpeed: 0
+  DashSpeed: 0
+  DashDelay: 0
+  DashAudio: {fileID: 0}
+  DashParticles: {fileID: 0}
 --- !u!50 &1078952287445758298
 Rigidbody2D:
   serializedVersion: 4

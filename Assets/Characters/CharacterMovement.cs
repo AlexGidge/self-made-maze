@@ -3,35 +3,18 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    private Rigidbody2D CharacterBody;
-    private float MoveSpeed;
-    private float RotationSpeed;
-    private float DashSpeed;
-    private float DashDelay;
-    private bool initialised;
+    public Rigidbody2D CharacterBody;
+    public float MoveSpeed;
+    public float RotationSpeed;
+    public float DashSpeed;
+    public float DashDelay;
 
-    protected AudioSource DashAudio;
-    protected ParticleSystem DashParticles;
+    public AudioSource DashAudio;
+    public ParticleSystem DashParticles;
 
     private float lastDash;
     public GameObject TargetObject { get; set; }
     public Quaternion TargetRotation { get; set; }
-
-    public void Initialise(Rigidbody2D rigidBody, float moveSpeed, float rotationSpeed, float dashSpeed,
-        float dashDelay, AudioSource dashAudio, ParticleSystem dashParticles)
-    {
-        if (!initialised)
-        {
-            CharacterBody = rigidBody;
-            MoveSpeed = moveSpeed;
-            RotationSpeed = rotationSpeed;
-            DashSpeed = dashSpeed;
-            DashDelay = dashDelay;
-            DashAudio = dashAudio;
-            DashParticles = dashParticles;
-            initialised = true;
-        }
-    }
 
     public bool HasActiveTarget()
     {
