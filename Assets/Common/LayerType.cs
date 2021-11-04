@@ -5,5 +5,7 @@
     IgnoreRaycast = 2,
     Character = 3,
     Water = 4,
-    UI = 5
+    UI = 5,
+    Wall = 6,
+    
 }

@@ -148,12 +148,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d27886c7c0162a45820425f47b607bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 0
-  RotationSpeed: 0
+  CharacterBody: {fileID: 3875500465226361973}
+  MoveSpeed: 100
+  RotationSpeed: 0.2
   DashSpeed: 0
   DashDelay: 0
   DashAudio: {fileID: 0}
   DashParticles: {fileID: 0}
+  MovedirectionChangeTime: 1
+  currentMovement: {x: 0, y: 0}
 --- !u!50 &3875500465226361973
 Rigidbody2D:
   serializedVersion: 4

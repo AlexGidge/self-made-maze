@@ -29,6 +29,8 @@ public abstract class CharacterCombat : MonoBehaviour
     public void TakeDamage(float damage)
     {
         CurrentHealth -= damage;
+        //TODO: TakeDamage FX / Audio
+        //TODO: Text damage popups
         
         if (CurrentHealth < 0f)
             Die();

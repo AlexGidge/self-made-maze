@@ -4935,7 +4935,6 @@ GameObject:
   - component: {fileID: 1078952287445758299}
   - component: {fileID: 1078952287445758244}
   - component: {fileID: 4374680096749005894}
-  - component: {fileID: 1078952287445758245}
   - component: {fileID: 1078952287445758298}
   - component: {fileID: 1078952287445758247}
   m_Layer: 3
@@ -5005,25 +5004,6 @@ MonoBehaviour:
   PlayerInput: {fileID: 0}
   PlayerMovement: {fileID: 1078952287445758244}
   BulletPrefab: {fileID: 1622154252412047064, guid: d0b1a424dbaf53a48a146383d3b86d80, type: 3}
---- !u!114 &1078952287445758245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078952287445758296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a109c4aee7eadaf4f920e6acc337a4e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CharacterBody: {fileID: 0}
-  MoveSpeed: 0
-  RotationSpeed: 0
-  DashSpeed: 0
-  DashDelay: 0
-  DashAudio: {fileID: 0}
-  DashParticles: {fileID: 0}
 --- !u!50 &1078952287445758298
 Rigidbody2D:
   serializedVersion: 4
