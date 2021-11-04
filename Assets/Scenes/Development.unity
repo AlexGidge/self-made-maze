@@ -10999,11 +10999,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!198 &1349353299 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1349353299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-  m_PrefabInstance: {fileID: 1078952288958684005}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1714858558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1078952287445758299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
@@ -11172,90 +11167,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1349353299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349353299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: lengthInSec
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349353299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349353299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349353299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349353299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349353299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349353299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: InitialModule.startSpeed.minScalar
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349353299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349353299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.009498768
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349353299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: InitialModule.startColor.minColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349353299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: InitialModule.startColor.minColor.g
-      value: 0.29682127
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349353299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: InitialModule.startColor.minColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349353299, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: InitialModule.startColor.minMaxState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 19413303099098413, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 19413303099098413, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: InitialModule.startColor.minColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19413303099098413, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: InitialModule.startColor.minColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19413303099098413, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: InitialModule.startColor.minColor.r
-      value: 0.5943396
-      objectReference: {fileID: 0}
-    - target: {fileID: 19413303099098413, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: InitialModule.startColor.minMaxState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1078952287445758244, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
       propertyPath: PlayerInput
       value: 
       objectReference: {fileID: 1841117000}
-    - target: {fileID: 1078952287445758244, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
-      propertyPath: DashParticles
-      value: 
-      objectReference: {fileID: 1349353299}
     - target: {fileID: 1078952287445758296, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
       propertyPath: m_Name
       value: Player

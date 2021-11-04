@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterMovement CharacterMovement;
 
     public AudioSource DashAudio;
+    public ParticleSystem DashParticles;
 
     public Rigidbody2D PlayerRigidBody;
     public float PlayerMoveSpeed;
@@ -42,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     private void Dash()
     {
         CharacterMovement.Dash(PlayerInput.MovementVector);
+        DashParticles.Play();
     }
     
     private void LookAtPoint(Vector3 point)
