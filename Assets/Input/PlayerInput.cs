@@ -7,6 +7,7 @@ public class PlayerInput : MonoBehaviour
     public InputActionsMaster InputMaster;
     private InputAction MovementAction;
     private InputAction FireAction;
+    private InputAction DashAction;
     public InputEvents Events;
     public Camera PlayerCamera;
 
@@ -27,16 +28,23 @@ public class PlayerInput : MonoBehaviour
         InputMaster.Player.Move.Enable();
         InputMaster.Player.DirectionalLook.Enable();
         InputMaster.Player.PointLook.Enable();
+        InputMaster.Player.Dash.Enable();
 
         InputMaster.Player.PointLook.performed += PointLookPerformed;
         InputMaster.Player.DirectionalLook.performed += DirectionLookPerformed;
-
+        
         InputMaster.Player.Fire.performed += FirePerformed;
+        InputMaster.Player.Dash.performed += DashPerformed;
     }
 
     private void FirePerformed(InputAction.CallbackContext obj)
     {
         Events.WeaponFired();
+    }
+    
+    private void DashPerformed(InputAction.CallbackContext obj)
+    {
+        Events.Dashed();
     }
 
     private void DirectionLookPerformed(InputAction.CallbackContext obj)
@@ -56,6 +64,7 @@ public sealed class InputEvents
     public Action<Vector2> OnLookDirection;
     public Action<Vector3> OnLookPoint;
     public Action OnWeaponFired;
+    public Action OnDash;
 
     public void LookDirection(Vector2 direction)
     {
@@ -70,5 +79,10 @@ public sealed class InputEvents
     public void WeaponFired()
     {
         OnWeaponFired?.Invoke();
+    }
+
+    public void Dashed()
+    {
+        OnDash?.Invoke();
     }
 }

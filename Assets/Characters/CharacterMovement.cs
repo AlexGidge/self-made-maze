@@ -6,16 +6,25 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D CharacterBody;
     private float MoveSpeed;
     private float RotationSpeed;
+    private float DashSpeed;
+    private float DashDelay;
     private bool initialised;
+    
+    
+    private float lastDash;
     public GameObject TargetObject { get; set; }
     public Quaternion TargetRotation { get; set; }
 
-    public void Initialise(Rigidbody2D rigidBody, float moveSpeed, float rotationSpeed)
+    public void Initialise(Rigidbody2D rigidBody, float moveSpeed, float rotationSpeed, float dashSpeed, float dashDelay)
     {
-        CharacterBody = rigidBody;
-        MoveSpeed = moveSpeed;
-        RotationSpeed = rotationSpeed;
-        initialised = true;
+        if (!initialised)
+        {
+            CharacterBody = rigidBody;
+            MoveSpeed = moveSpeed;
+            RotationSpeed = rotationSpeed;
+            DashSpeed = dashSpeed;
+            initialised = true;
+        }
     }
     
     public bool HasActiveTarget()
@@ -26,6 +35,15 @@ public class CharacterMovement : MonoBehaviour
     public void ApplyMovement(Vector2 movement)
     {
         CharacterBody.AddForce(movement * MoveSpeed);
+    }
+
+    public void Dash(Vector2 movement)
+    {
+        if (lastDash < (Time.time + DashDelay))
+        {
+            lastDash = Time.time;
+            CharacterBody.AddForce(movement * DashSpeed);
+        }
     }
 
     public void LookInDirection(Vector2 direction)
