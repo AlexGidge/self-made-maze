@@ -4939,7 +4939,7 @@ GameObject:
   - component: {fileID: 1078952287445758247}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4979,11 +4979,12 @@ MonoBehaviour:
   CharacterBody: {fileID: 1078952287445758298}
   MoveSpeed: 5
   RotationSpeed: 0.7
-  DashSpeed: 10
+  DashSpeed: 100
   DashDelay: 0.9
   DashAudio: {fileID: 3148203485845418955}
   DashParticles: {fileID: 1349353299}
   PlayerInput: {fileID: 0}
+  SpawnLocation: {x: -4.5, y: -12.5}
 --- !u!114 &4374680096749005894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4999,6 +5000,8 @@ MonoBehaviour:
   maxHealth: 3
   MinDamage: 1
   MaxDamage: 3
+  BulletDelay: 0.33
+  InvulnerabilityTime: 1
   CurrentHealth: 0
   BulletAudioSource: {fileID: 735194114}
   PlayerInput: {fileID: 0}
