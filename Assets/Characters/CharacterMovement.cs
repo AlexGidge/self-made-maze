@@ -23,6 +23,7 @@ public class CharacterMovement : MonoBehaviour
             MoveSpeed = moveSpeed;
             RotationSpeed = rotationSpeed;
             DashSpeed = dashSpeed;
+            DashDelay = dashDelay;
             initialised = true;
         }
     }
@@ -39,7 +40,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void Dash(Vector2 movement)
     {
-        if (lastDash < (Time.time + DashDelay))
+        if (lastDash + DashDelay < Time.time)
         {
             lastDash = Time.time;
             CharacterBody.AddForce(movement * DashSpeed);

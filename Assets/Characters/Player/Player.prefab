@@ -75,9 +75,9 @@ MonoBehaviour:
   CharacterMovement: {fileID: 1078952287445758245}
   PlayerRigidBody: {fileID: 1078952287445758298}
   PlayerMoveSpeed: 5
-  PlayerRotationSpeed: 0.06
-  PlayerDashDelay: 0
-  PlayerDashSpeed: 0
+  PlayerRotationSpeed: 0.07
+  PlayerDashDelay: 0.75
+  PlayerDashSpeed: 100
   currentMovement: {x: 0, y: 0}
 --- !u!114 &4374680096749005894
 MonoBehaviour:
