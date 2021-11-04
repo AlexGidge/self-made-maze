@@ -5,8 +5,8 @@ using Random = UnityEngine.Random;
 
 public class ShadowMovement : CharacterMovement
 {
-    public float MovedirectionChangeDelay = 2.5f;
-    public float CollisionDamage = 1f;
+    public float MovedirectionChangeDelay;
+    public float CollisionDamage;
     private float lastDirectionChangeTime;
     
 

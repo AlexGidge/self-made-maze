@@ -11,9 +11,12 @@ public abstract class CharacterCombat : MonoBehaviour
     public float maxHealth;
     public float MinDamage;
     public float MaxDamage;
-    
-    //TODO: Invulnerability time for player
-    //public float InvulnerabilityTime;
+
+    public float BulletDelay;
+    private float lastBulletTime;
+
+    public float InvulnerabilityTime;
+    private float lastDamageTakenTime;
     
     [SerializeField]
     private float CurrentHealth;
@@ -28,26 +31,33 @@ public abstract class CharacterCombat : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        CurrentHealth -= damage;
-        //TODO: TakeDamage FX / Audio
-        //TODO: Text damage popups
-        
-        if (CurrentHealth < 0f)
-            Die();
+        if (lastDamageTakenTime + InvulnerabilityTime < Time.time)
+        {
+            CurrentHealth -= damage;
+            //TODO: TakeDamage FX / Audio
+            //TODO: Text damage popups
+
+            if (CurrentHealth < 0f)
+                Die();
+        }
     }
 
     public abstract void Die();
-    
+
     protected void FireBullet(GameObject bulletPrefab, Quaternion direction)
     {
-        GameObject bullet = Instantiate(bulletPrefab);
-        bullet.transform.position = this.transform.position;
-        BulletController bulletController = bullet.GetComponent<BulletController>();
-        if (bulletController != null)
+        if (lastBulletTime + BulletDelay < Time.time)
         {
-            bullet.transform.rotation = direction;
-            bulletController.FireBullet(CharacterID, direction, CalculateDamage());
-            BulletAudioSource.PlayOneShot(BulletAudioSource.clip);
+            lastBulletTime = Time.time;
+            GameObject bullet = Instantiate(bulletPrefab);
+            bullet.transform.position = this.transform.position;
+            BulletController bulletController = bullet.GetComponent<BulletController>();
+            if (bulletController != null)
+            {
+                bullet.transform.rotation = direction;
+                bulletController.FireBullet(CharacterID, direction, CalculateDamage());
+                BulletAudioSource.PlayOneShot(BulletAudioSource.clip);
+            }
         }
     }
 

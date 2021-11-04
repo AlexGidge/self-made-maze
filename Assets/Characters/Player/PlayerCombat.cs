@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlayerCombat : CharacterCombat
 {
     public PlayerInput PlayerInput;
-    
     public PlayerMovement PlayerMovement;
-
     public GameObject BulletPrefab;
 
     private void OnEnable()

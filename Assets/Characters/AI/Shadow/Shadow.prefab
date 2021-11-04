@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 5333822216867216944}
   - component: {fileID: 3875500465226361973}
   - component: {fileID: 929983291220172947}
+  - component: {fileID: 1447910040}
   m_Layer: 3
   m_Name: Shadow
   m_TagString: Untagged
@@ -133,6 +134,8 @@ MonoBehaviour:
   maxHealth: 300
   MinDamage: 0.9
   MaxDamage: 1.1
+  BulletDelay: 0.25
+  InvulnerabilityTime: 0
   CurrentHealth: 0
   BulletAudioSource: {fileID: 0}
   BulletPrefab: {fileID: 0}
@@ -149,13 +152,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterBody: {fileID: 3875500465226361973}
-  MoveSpeed: 100
+  MoveSpeed: 175
   RotationSpeed: 0.2
   DashSpeed: 0
   DashDelay: 0
   DashAudio: {fileID: 0}
   DashParticles: {fileID: 0}
-  MovedirectionChangeTime: 1
+  MovedirectionChangeDelay: 1
+  CollisionDamage: 1
   currentMovement: {x: 0, y: 0}
 --- !u!50 &3875500465226361973
 Rigidbody2D:
@@ -194,3 +198,19 @@ CircleCollider2D:
   m_Offset: {x: -0.022685893, y: -0.02268587}
   serializedVersion: 2
   m_Radius: 0.22776961
+--- !u!58 &1447910040
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668291967332366365}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.03, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.75

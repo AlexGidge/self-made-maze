@@ -6,6 +6,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
+    public float lifetime;
 
     private bool fired;
     private float bulletSpeed = 5000f;
@@ -30,7 +31,7 @@ public class BulletController : MonoBehaviour
 
     IEnumerator Selfdestruct()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(lifetime);
         Destroy(gameObject);
     }
 

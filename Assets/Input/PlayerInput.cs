@@ -37,6 +37,20 @@ public class PlayerInput : MonoBehaviour
         InputMaster.Player.Dash.performed += DashPerformed;
     }
 
+    private void OnDestroy()
+    {
+        TearDownInput();
+    }
+
+    private void TearDownInput()
+    {        
+        InputMaster.Player.PointLook.performed -= PointLookPerformed;
+        InputMaster.Player.DirectionalLook.performed -= DirectionLookPerformed;
+        
+        InputMaster.Player.Fire.performed -= FirePerformed;
+        InputMaster.Player.Dash.performed -= DashPerformed;
+    }
+
     private void FirePerformed(InputAction.CallbackContext obj)
     {
         Events.WeaponFired();

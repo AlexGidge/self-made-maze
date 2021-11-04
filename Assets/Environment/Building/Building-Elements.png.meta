@@ -17,6 +17,15 @@ TextureImporter:
   - first:
       213: 339580005922421556
     second: Building-Elements_4
+  - first:
+      213: -978742810733621838
+    second: Building-Elements_5
+  - first:
+      213: 6401075410379909799
+    second: Building-Elements_6
+  - first:
+      213: 8323727640516566307
+    second: Building-Elements_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -149,7 +158,7 @@ TextureImporter:
         y: 96
         width: 32
         height: 32
-      alignment: 9
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -259,11 +268,103 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -5, y: 6}
+        - {x: -10, y: 4}
+        - {x: -10, y: -6}
+        - {x: -6, y: -8}
+        - {x: 5, y: -8}
+        - {x: 9, y: -6}
+        - {x: 10, y: 2}
+        - {x: 7, y: 5}
       tessellationDetail: 0
       bones: []
       spriteID: 43bb4d9573e66b400800000000000000
       internalID: 339580005922421556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building-Elements_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -6, y: 8}
+        - {x: -13, y: 3}
+        - {x: -13, y: -6}
+        - {x: -4, y: -11}
+        - {x: 5, y: -6}
+        - {x: 6, y: 5}
+        - {x: 2, y: 9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd41c7699eca62f0800000000000000
+      internalID: -978742810733621838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building-Elements_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -6, y: 6}
+        - {x: -8, y: -4}
+        - {x: -4, y: -9}
+        - {x: 1, y: -10}
+        - {x: 11, y: -6}
+        - {x: 11, y: 6}
+        - {x: 4, y: 10}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aaae20eb2035d850800000000000000
+      internalID: 6401075410379909799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building-Elements_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 10}
+        - {x: -13, y: 5}
+        - {x: -13, y: -6}
+        - {x: 2, y: -7}
+        - {x: 13, y: 0}
+        - {x: 9, y: 9}
+        - {x: 2, y: 12}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d17142032d38370800000000000000
+      internalID: 8323727640516566307
       vertices: []
       indices: 
       edges: []
