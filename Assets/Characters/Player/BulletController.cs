@@ -7,9 +7,11 @@ public class BulletController : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
     public float lifetime;
-
+    public float bulletSpeed;
+    
+    //TODO: Bullet max distance?
+    
     private bool fired;
-    private float bulletSpeed = 5000f;
     private float multiplier = 1;
 
     private float Damage;
@@ -21,7 +23,7 @@ public class BulletController : MonoBehaviour
     void Awake()
     {
         Initialise();
-        StartCoroutine(Selfdestruct());
+        StartCoroutine("Selfdestruct");
     }
 
     private void Initialise()
@@ -33,6 +35,7 @@ public class BulletController : MonoBehaviour
     {
         yield return new WaitForSeconds(lifetime);
         Destroy(gameObject);
+        //TODO: Fadeout
     }
 
     public void FireBullet(Guid parent, Quaternion direction, float damage)

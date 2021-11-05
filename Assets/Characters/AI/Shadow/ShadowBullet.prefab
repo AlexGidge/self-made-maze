@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1590452125760142229}
-  lifetime: 2.5
+  lifetime: 1
+  bulletSpeed: 1000
   bulletDirection: {x: 0, y: 0, z: 0, w: 0}
 --- !u!50 &1590452125760142229
 Rigidbody2D:

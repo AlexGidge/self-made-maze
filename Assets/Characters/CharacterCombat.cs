@@ -36,18 +36,21 @@ public abstract class CharacterCombat : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (CharacterState != CharacterStateType.Dead && lastDamageTakenTime + InvulnerabilityTime < Time.time)
+        if (CharacterState == CharacterStateType.Alive)
         {
-            lastDamageTakenTime = Time.time;
-            CurrentHealth -= damage;
-            CharacterAnimator.Play(TakeDamageAnimation);
-            //TODO: TakeDamage FX / Audio
-            //TODO: Text damage popups
-
-            if (CurrentHealth < 0f)
+            if (CharacterState != CharacterStateType.Dead && lastDamageTakenTime + InvulnerabilityTime < Time.time)
             {
-                CharacterState = CharacterStateType.Dead;
-                Die();
+                lastDamageTakenTime = Time.time;
+                CurrentHealth -= damage;
+                CharacterAnimator.Play(TakeDamageAnimation);
+                //TODO: TakeDamage FX / Audio
+                //TODO: Text damage popups
+
+                if (CurrentHealth < 0f)
+                {
+                    CharacterState = CharacterStateType.Dead;
+                    Die();
+                }
             }
         }
     }
@@ -56,7 +59,7 @@ public abstract class CharacterCombat : MonoBehaviour
 
     protected void FireBullet(GameObject bulletPrefab, Quaternion direction)
     {
-        if (lastBulletTime + BulletDelay < Time.time)
+        if (CharacterState == CharacterStateType.Alive && lastBulletTime + BulletDelay < Time.time)
         {
             lastBulletTime = Time.time;
             GameObject bullet = Instantiate(bulletPrefab);
@@ -75,6 +78,13 @@ public abstract class CharacterCombat : MonoBehaviour
     {
         return Random.Range(MinDamage, MaxDamage);
     }
+
+    private void OnEnable()
+    {
+        Initialise();
+    }
+
+    protected abstract void Initialise();
 }
 
 public enum CharacterStateType

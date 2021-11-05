@@ -9,13 +9,14 @@ public class PlayerCombat : CharacterCombat
     public GameObject BulletPrefab;
 
     public GameObject PlayerShadow;
-
-    private void OnEnable()
+    
+    protected override void Initialise()
     {
         RegisterEvents();
         Game.Current.GameEvents.OnLevelCompleted += LevelCompleted;
+        CharacterState = CharacterStateType.Alive;
     }
-
+    
     private void LevelCompleted()
     {
         PlayerShadow.SetActive(true);
