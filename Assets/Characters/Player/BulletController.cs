@@ -2,12 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class BulletController : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
     public float lifetime;
     public float bulletSpeed;
+    public float ShootRange;
+    private Vector2 startLocation;
+    
     
     //TODO: Bullet max distance?
     
@@ -34,12 +38,18 @@ public class BulletController : MonoBehaviour
     IEnumerator Selfdestruct()
     {
         yield return new WaitForSeconds(lifetime);
-        Destroy(gameObject);
+        Destroy();
         //TODO: Fadeout
+    }
+
+    private void Destroy()
+    {
+        Destroy(gameObject);
     }
 
     public void FireBullet(Guid parent, Quaternion direction, float damage)
     {
+        startLocation = transform.position;
         CharacterHits.Add(parent);
         Damage = damage;
         bulletDirection = direction;
@@ -48,6 +58,11 @@ public class BulletController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Vector2.Distance(transform.position, startLocation) > ShootRange)
+        {
+            Destroy();
+        }
+        
         if (fired)
         {
             Vector3 force = bulletDirection * Vector3.up;

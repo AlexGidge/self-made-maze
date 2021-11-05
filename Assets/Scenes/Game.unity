@@ -162,14 +162,14 @@ MonoBehaviour:
   m_Follow: {fileID: 1714858558}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 1.4
+    OrthographicSize: 1.6
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3579136, y: 1}
+    m_SensorSize: {x: 1.2458746, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -34271,7 +34271,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.4
+  orthographic size: 1.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
