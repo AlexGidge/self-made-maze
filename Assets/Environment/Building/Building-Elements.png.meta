@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: 8323727640516566307
     second: Building-Elements_7
+  - first:
+      213: -2526073734900604388
+    second: Building-Elements_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -365,6 +368,35 @@ TextureImporter:
       bones: []
       spriteID: 32d17142032d38370800000000000000
       internalID: 8323727640516566307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building-Elements_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -3, y: 9}
+        - {x: -11, y: 5}
+        - {x: -11, y: -4}
+        - {x: -4, y: -8}
+        - {x: 4, y: -9}
+        - {x: 13, y: -6}
+        - {x: 13, y: 3}
+        - {x: 7, y: 8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c122ec2625591fcd0800000000000000
+      internalID: -2526073734900604388
       vertices: []
       indices: 
       edges: []
