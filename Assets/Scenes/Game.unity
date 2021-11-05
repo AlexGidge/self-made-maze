@@ -169,7 +169,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3570144, y: 1}
+    m_SensorSize: {x: 1.3579136, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -42337,6 +42337,14 @@ PrefabInstance:
     - target: {fileID: 2668291967332366365, guid: 5d2c3acd69d92ea4fb1de6b7fb01897a, type: 3}
       propertyPath: m_Name
       value: Shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737983353584564605, guid: 5d2c3acd69d92ea4fb1de6b7fb01897a, type: 3}
+      propertyPath: BulletPrefab
+      value: 
+      objectReference: {fileID: 1622154252412047064, guid: bf6ac0edce7fa6b45a23d275ed83e2b2, type: 3}
+    - target: {fileID: 5333822216867216944, guid: 5d2c3acd69d92ea4fb1de6b7fb01897a, type: 3}
+      propertyPath: WakeDelay
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2c3acd69d92ea4fb1de6b7fb01897a, type: 3}
