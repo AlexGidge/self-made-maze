@@ -142,8 +142,12 @@ MonoBehaviour:
   InvulnerabilityTime: 0
   CurrentHealth: 0
   BulletAudioSource: {fileID: 3815955337270635176}
-  TimeBetweenAttacks: 5
-  BulletPrefab: {fileID: 1622154252412047064, guid: bf6ac0edce7fa6b45a23d275ed83e2b2, type: 3}
+  TimeBetweenAttacks: 3.3
+  Attack1Bullet: {fileID: 1622154252412047064, guid: bf6ac0edce7fa6b45a23d275ed83e2b2, type: 3}
+  Attack2Bullet: {fileID: 1622154252412047064, guid: bf6ac0edce7fa6b45a23d275ed83e2b2, type: 3}
+  Attack3Bullet: {fileID: 2445824902230906844, guid: cb95c647290092c47910781376144461, type: 3}
+  Attack1AudioClip: {fileID: 8300000, guid: 6c770df172d4f7b47a6833be66208b38, type: 3}
+  Attack3AudioClip: {fileID: 8300000, guid: c8533bea37d3f4247a8935e40637b1fe, type: 3}
   CurrentSequence: 0
   CurrentState: 0
 --- !u!114 &5333822216867216944
@@ -159,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterBody: {fileID: 3875500465226361973}
-  MoveSpeed: 200
+  MoveSpeed: 225
   RotationSpeed: 0.2
   DashSpeed: 0
   DashDelay: 0
@@ -252,7 +256,7 @@ GameObject:
   - component: {fileID: 288101422232474521}
   - component: {fileID: 3815955337270635176}
   m_Layer: 3
-  m_Name: AttackAudioSource
+  m_Name: AttackAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -282,7 +286,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 44c68f15c6d1a1447a4ceb25d2646109, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6c770df172d4f7b47a6833be66208b38, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

@@ -6,7 +6,14 @@ using UnityEngine;
 public class ShadowCombat : CharacterCombat
 {
     public float TimeBetweenAttacks;
-    public GameObject BulletPrefab;
+    
+    public GameObject Attack1Bullet;
+    public GameObject Attack2Bullet;
+    public GameObject Attack3Bullet;
+
+    public AudioClip Attack1AudioClip;
+    public AudioClip Attack3AudioClip;
+
     public ShadowAttackSequence CurrentSequence;
     public ShadowState CurrentState;
 
@@ -38,24 +45,36 @@ public class ShadowCombat : CharacterCombat
     {
         //TODO: Attack
         Debug.Log("Attack 1 Started.");
-        yield return Attack2();
+        for (int x = 0; x < 10; x++)
+        {
+            yield return new WaitForSeconds(0.25f);
+            FireBullet(Attack1Bullet, GenerateQuaternion());
+            BulletAudioSource.PlayOneShot(Attack1AudioClip);
+        }
     }
     
     
     private IEnumerator Attack2()
     {
         Debug.Log("Attack 2 Started.");
-        for (int x = 0; x < 10; x++)
-        {
-            yield return new WaitForSeconds(0.25f);
-            FireBullet(BulletPrefab, GenerateQuaternion());
-        }
+        yield return Attack1();
     }
 
     private IEnumerator Attack3()
     {
         Debug.Log("Attack 3 Started.");
-        yield return Attack2();
+        GameObject bullet = Instantiate(Attack3Bullet);
+        bullet.transform.position = this.transform.position;
+        BulletController bulletController = bullet.GetComponent<BulletController>();
+        if (bulletController != null)
+        {
+            bullet.transform.rotation = new Quaternion();
+            bulletController.FireBullet(CharacterID, new Quaternion(), CalculateDamage());
+            BulletAudioSource.PlayOneShot(Attack3AudioClip);
+            //TODO: Stop movement
+        }
+        
+        yield return new WaitForSeconds(11);
     }
 
     private Quaternion GenerateQuaternion()
@@ -78,12 +97,12 @@ public class ShadowCombat : CharacterCombat
     
     public IEnumerator StartSequence()
     {
+        yield return new WaitForSeconds(TimeBetweenAttacks);
         Debug.Log("Sequence Starting...");
         CurrentState = ShadowState.Attacking;
         GenerateNextSequence();
         yield return PlayCurrentSequence();
         CurrentState = ShadowState.Finished;
-        yield return new WaitForSeconds(TimeBetweenAttacks);
         StartCoroutine("StartSequence");
     }
 

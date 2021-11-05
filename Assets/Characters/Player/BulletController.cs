@@ -66,7 +66,9 @@ public class BulletController : MonoBehaviour
         if (fired)
         {
             Vector3 force = bulletDirection * Vector3.up;
-            GetComponent<Rigidbody2D>().AddForce(force * bulletSpeed * Time.deltaTime * multiplier);
+            Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
+            if(rigidbody != null)
+                rigidbody.AddForce(force * bulletSpeed * Time.deltaTime * multiplier);
         }
     }
 
@@ -89,5 +91,21 @@ public class BulletController : MonoBehaviour
                 }
             }
         } //TODO: Handle else error
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.layer == (int) LayerType.Character)
+        {
+            CharacterCombat combat = other.gameObject.GetComponent<CharacterCombat>();
+            if (combat != null)
+            {
+                if (!CharacterHits.Contains(combat.CharacterID))
+                {
+                    CharacterHits.Add(combat.CharacterID);
+                    combat.TakeDamage(Damage);
+                }
+            }
+        }
     }
 }

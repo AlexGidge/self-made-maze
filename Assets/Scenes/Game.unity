@@ -162,14 +162,14 @@ MonoBehaviour:
   m_Follow: {fileID: 1714858558}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 1.6
+    OrthographicSize: 1.7
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.2458746, y: 1}
+    m_SensorSize: {x: 1.5, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -34271,7 +34271,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.6
+  orthographic size: 1.7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -42193,14 +42193,6 @@ PrefabInstance:
     - target: {fileID: 2668291967332366365, guid: 5d2c3acd69d92ea4fb1de6b7fb01897a, type: 3}
       propertyPath: m_Name
       value: Shadow
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737983353584564605, guid: 5d2c3acd69d92ea4fb1de6b7fb01897a, type: 3}
-      propertyPath: TimeBetweenAttacks
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5333822216867216944, guid: 5d2c3acd69d92ea4fb1de6b7fb01897a, type: 3}
-      propertyPath: MoveSpeed
-      value: 225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2c3acd69d92ea4fb1de6b7fb01897a, type: 3}

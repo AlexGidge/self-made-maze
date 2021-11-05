@@ -74,7 +74,7 @@ public abstract class CharacterCombat : MonoBehaviour
         }
     }
 
-    private float CalculateDamage()
+    protected float CalculateDamage()
     {
         return Random.Range(MinDamage, MaxDamage);
     }

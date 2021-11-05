@@ -4979,14 +4979,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterBody: {fileID: 1078952287445758298}
-  MoveSpeed: 5
+  MoveSpeed: 7
   RotationSpeed: 0.7
-  DashSpeed: 100
+  DashSpeed: 175
   DashDelay: 0.9
   DashAudio: {fileID: 3148203485845418955}
   DashParticles: {fileID: 1349353299}
   PlayerInput: {fileID: 0}
-  SpawnLocation: {x: -4.5, y: -12.5}
+  SpawnLocation: {x: 0, y: -2}
 --- !u!114 &4374680096749005894
 MonoBehaviour:
   m_ObjectHideFlags: 0
