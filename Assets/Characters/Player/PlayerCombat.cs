@@ -23,7 +23,9 @@ public class PlayerCombat : CharacterCombat
 
     private void RegisterEvents()
     {
-        PlayerInput.Events.OnWeaponFired += Fire;
+        PlayerInput.Events.OnWeaponFired += StartFiring;
+        PlayerInput.Events.OnWeaponFireStopped += StopFiring;
+        EngineManager.Current.Events.EveryUpdate += Fire;
     }
 
     private void OnDisable()
@@ -33,15 +35,33 @@ public class PlayerCombat : CharacterCombat
     
     private void DeRegisterEvents()
     {
-        PlayerInput.Events.OnWeaponFired -= Fire;
+        PlayerInput.Events.OnWeaponFired -= StartFiring;
+        PlayerInput.Events.OnWeaponFireStopped -= StopFiring;
+        EngineManager.Current.Events.EveryUpdate -= Fire;
+        
+    }
+
+    private bool firing;
+
+    private void StartFiring()
+    {
+        firing = true;
     }
 
     void Fire()
     {
-        Quaternion playerDirection = PlayerMovement.currentRotation;
-        FireBullet(BulletPrefab, playerDirection);
+        if (firing)
+        {
+            Quaternion playerDirection = PlayerMovement.currentRotation;
+            FireBullet(BulletPrefab, playerDirection);
+        }
     }
 
+    void StopFiring()
+    {
+        firing = false;
+    }
+    
     public override void Die()
     {
         //TODO: PlayerDeath
