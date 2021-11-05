@@ -6,6 +6,8 @@ using Random = UnityEngine.Random;
 
 public abstract class CharacterCombat : MonoBehaviour
 {
+    public CharacterStateType CharacterState;
+    
     public Guid CharacterID;
     
     public float maxHealth;
@@ -27,18 +29,23 @@ public abstract class CharacterCombat : MonoBehaviour
     {
         CharacterID = Guid.NewGuid();
         CurrentHealth = maxHealth;
+        CharacterState = CharacterStateType.Alive;
     }
 
     public void TakeDamage(float damage)
     {
-        if (lastDamageTakenTime + InvulnerabilityTime < Time.time)
+        if (CharacterState != CharacterStateType.Dead && lastDamageTakenTime + InvulnerabilityTime < Time.time)
         {
             CurrentHealth -= damage;
             //TODO: TakeDamage FX / Audio
             //TODO: Text damage popups
+            //TODO: Text damage animation/colour change
 
             if (CurrentHealth < 0f)
+            {
+                CharacterState = CharacterStateType.Dead;
                 Die();
+            }
         }
     }
 
@@ -65,4 +72,11 @@ public abstract class CharacterCombat : MonoBehaviour
     {
         return Random.Range(MinDamage, MaxDamage);
     }
+}
+
+public enum CharacterStateType
+{
+    Asleep = 1,
+    Alive = 2,
+    Dead = 3,
 }

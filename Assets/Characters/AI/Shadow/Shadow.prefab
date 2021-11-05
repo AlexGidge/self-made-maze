@@ -131,7 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21b441e3916d4f88b63a28bc88f30003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 300
+  CharacterState: 0
+  maxHealth: 100
   MinDamage: 0.9
   MaxDamage: 1.1
   BulletDelay: 0.25
@@ -152,14 +153,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterBody: {fileID: 3875500465226361973}
-  MoveSpeed: 175
+  MoveSpeed: 200
   RotationSpeed: 0.2
   DashSpeed: 0
   DashDelay: 0
   DashAudio: {fileID: 0}
   DashParticles: {fileID: 0}
-  MovedirectionChangeDelay: 0.5
+  MovedirectionChangeDelay: 0.6
   CollisionDamage: 1
+  WakeDelay: 0
   currentMovement: {x: 0, y: 0}
 --- !u!50 &3875500465226361973
 Rigidbody2D:

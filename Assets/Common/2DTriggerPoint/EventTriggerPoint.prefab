@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e6bfa7b5914d84689fab810b74de47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxTriggerEvents: 1
 --- !u!61 &2226971631468371545
 BoxCollider2D:
   m_ObjectHideFlags: 0

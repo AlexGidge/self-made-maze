@@ -1,14 +1,17 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 using Random = UnityEngine.Random;
 
 public class ShadowMovement : CharacterMovement
 {
     public float MovedirectionChangeDelay;
     public float CollisionDamage;
+    public float WakeDelay;
     private float lastDirectionChangeTime;
-    
 
     [SerializeField]
     private Vector2 currentMovement;
@@ -16,11 +19,26 @@ public class ShadowMovement : CharacterMovement
     public void Start()
     {
         EngineManager.Current.Events.EveryPhysicsUpdate += ApplyMovement;
+        TriggerManager.Current.TriggerEvents.OnRoomEntered += RoomEntered;
+    }
+
+    private void RoomEntered()
+    {
+        StartCoroutine("Awaken");
+    }
+
+    private IEnumerator Awaken()
+    {
+        yield return new WaitForSeconds(WakeDelay);
+        SetMovement(1,1);
     }
 
     private void ApplyMovement()
     {
-        ApplyMovement(currentMovement);
+        if (Game.Current.GameState == GameStateType.Playing)
+        {
+            ApplyMovement(currentMovement);
+        }
     }
 
     public void ChangeMovement()
