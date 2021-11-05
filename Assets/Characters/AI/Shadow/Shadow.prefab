@@ -158,7 +158,7 @@ MonoBehaviour:
   DashDelay: 0
   DashAudio: {fileID: 0}
   DashParticles: {fileID: 0}
-  MovedirectionChangeDelay: 1
+  MovedirectionChangeDelay: 0.5
   CollisionDamage: 1
   currentMovement: {x: 0, y: 0}
 --- !u!50 &3875500465226361973
