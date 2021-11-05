@@ -7,7 +7,9 @@ using Random = UnityEngine.Random;
 public abstract class CharacterCombat : MonoBehaviour
 {
     public CharacterStateType CharacterState;
-    
+    public Animator CharacterAnimator;
+    private static string TakeDamageAnimation = "TakeDamage";
+
     public Guid CharacterID;
     
     public float maxHealth;
@@ -36,10 +38,11 @@ public abstract class CharacterCombat : MonoBehaviour
     {
         if (CharacterState != CharacterStateType.Dead && lastDamageTakenTime + InvulnerabilityTime < Time.time)
         {
+            lastDamageTakenTime = Time.time;
             CurrentHealth -= damage;
+            CharacterAnimator.Play(TakeDamageAnimation);
             //TODO: TakeDamage FX / Audio
             //TODO: Text damage popups
-            //TODO: Text damage animation/colour change
 
             if (CurrentHealth < 0f)
             {

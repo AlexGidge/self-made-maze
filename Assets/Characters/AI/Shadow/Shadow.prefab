@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 3875500465226361973}
   - component: {fileID: 929983291220172947}
   - component: {fileID: 1447910040}
+  - component: {fileID: 2381994504090901732}
   m_Layer: 3
   m_Name: Shadow
   m_TagString: Untagged
@@ -132,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterState: 0
+  CharacterAnimator: {fileID: 2381994504090901732}
   maxHealth: 100
   MinDamage: 0.9
   MaxDamage: 1.1
@@ -159,7 +161,7 @@ MonoBehaviour:
   DashDelay: 0
   DashAudio: {fileID: 0}
   DashParticles: {fileID: 0}
-  MovedirectionChangeDelay: 0.6
+  MovedirectionChangeDelay: 0.25
   CollisionDamage: 1
   WakeDelay: 0
   currentMovement: {x: 0, y: 0}
@@ -216,3 +218,22 @@ CircleCollider2D:
   m_Offset: {x: -0.03, y: 0}
   serializedVersion: 2
   m_Radius: 0.75
+--- !u!95 &2381994504090901732
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668291967332366365}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc9243e39a381c14ba2fb90ce8152417, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

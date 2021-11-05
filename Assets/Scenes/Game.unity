@@ -41992,6 +41992,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 210906369278699024, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1078952287445758244, guid: f15560673f1ebf545b20dc70dda46a8a, type: 3}
       propertyPath: PlayerInput
       value: 
@@ -42333,10 +42337,6 @@ PrefabInstance:
     - target: {fileID: 2668291967332366365, guid: 5d2c3acd69d92ea4fb1de6b7fb01897a, type: 3}
       propertyPath: m_Name
       value: Shadow
-      objectReference: {fileID: 0}
-    - target: {fileID: 5333822216867216944, guid: 5d2c3acd69d92ea4fb1de6b7fb01897a, type: 3}
-      propertyPath: MovedirectionChangeDelay
-      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2c3acd69d92ea4fb1de6b7fb01897a, type: 3}
