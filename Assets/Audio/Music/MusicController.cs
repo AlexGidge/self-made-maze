@@ -43,7 +43,7 @@ public class MusicController : MonoBehaviour
 
     public IEnumerator ChangeToCombatTrack()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
         MusicSource.clip = CombatTrack;
         MusicSource.Play();
     }

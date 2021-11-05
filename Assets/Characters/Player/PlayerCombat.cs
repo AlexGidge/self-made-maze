@@ -8,9 +8,17 @@ public class PlayerCombat : CharacterCombat
     public PlayerMovement PlayerMovement;
     public GameObject BulletPrefab;
 
+    public GameObject PlayerShadow;
+
     private void OnEnable()
     {
         RegisterEvents();
+        Game.Current.GameEvents.OnLevelCompleted += LevelCompleted;
+    }
+
+    private void LevelCompleted()
+    {
+        PlayerShadow.SetActive(true);
     }
 
     private void RegisterEvents()

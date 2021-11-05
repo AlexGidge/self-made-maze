@@ -43,12 +43,10 @@ public class ShadowMovement : CharacterMovement
 
     public void ChangeMovement()
     {
-        if (lastDirectionChangeTime + MovedirectionChangeDelay < Time.time)
-        {
-            int x = Random.Range(-1, 2);
-            int y = Random.Range(-1, 2);
-            SetMovement(x, y);
-        }
+        int x = Random.Range(-1, 2);
+        int y = Random.Range(-1, 2);
+        SetMovement(x, y);
+
     }
 
     private void SetMovement(int x, int y)
@@ -59,7 +57,13 @@ public class ShadowMovement : CharacterMovement
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        ChangeMovement();
+        if (other.gameObject.layer == (int) LayerType.Wall || other.gameObject.tag == "Player")
+        {
+            if (lastDirectionChangeTime + MovedirectionChangeDelay < Time.time)
+            {
+                ChangeMovement();
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
