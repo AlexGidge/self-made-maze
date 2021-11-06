@@ -4986,7 +4986,7 @@ MonoBehaviour:
   DashAudio: {fileID: 3148203485845418955}
   DashParticles: {fileID: 1349353299}
   PlayerInput: {fileID: 0}
-  SpawnLocation: {x: 0, y: -2}
+  SpawnLocation: {x: -4.5, y: -12.5}
 --- !u!114 &4374680096749005894
 MonoBehaviour:
   m_ObjectHideFlags: 0
