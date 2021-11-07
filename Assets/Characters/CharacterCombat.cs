@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,7 +9,8 @@ public abstract class CharacterCombat : MonoBehaviour
     private static string TakeDamageAnimation = "TakeDamage";
 
     public Guid CharacterID;
-    
+
+    //TODO: Extract combat, health and character to 3 separate classes
     public float maxHealth;
     public float MinDamage;
     public float MaxDamage;

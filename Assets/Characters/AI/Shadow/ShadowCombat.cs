@@ -11,6 +11,8 @@ public class ShadowCombat : CharacterCombat
     public GameObject Attack2Bullet;
     public GameObject Attack3Bullet;
 
+    public float Attack3damage;
+    
     public AudioClip Attack1AudioClip;
     public AudioClip Attack3AudioClip;
 
@@ -63,18 +65,19 @@ public class ShadowCombat : CharacterCombat
     private IEnumerator Attack3()
     {
         Debug.Log("Attack 3 Started.");
-        GameObject bullet = Instantiate(Attack3Bullet);
-        bullet.transform.position = this.transform.position;
-        BulletController bulletController = bullet.GetComponent<BulletController>();
-        if (bulletController != null)
-        {
-            bullet.transform.rotation = new Quaternion();
-            bulletController.FireBullet(CharacterID, new Quaternion(), CalculateDamage());
-            BulletAudioSource.PlayOneShot(Attack3AudioClip);
-            //TODO: Stop movement
-        }
-        
-        yield return new WaitForSeconds(11);
+
+            GameObject bullet = Instantiate(Attack3Bullet);
+            bullet.transform.position = this.transform.position;
+            BulletController bulletController = bullet.GetComponent<BulletController>();
+            if (bulletController != null)
+            {
+                bullet.transform.rotation = new Quaternion();
+                bulletController.FireBullet(CharacterID, new Quaternion(), Attack3damage);
+                BulletAudioSource.PlayOneShot(Attack3AudioClip);
+                //TODO: Stop movement
+            }
+
+            yield return new WaitForSeconds(11);
     }
 
     private Quaternion GenerateQuaternion()

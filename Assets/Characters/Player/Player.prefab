@@ -5001,7 +5001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterState: 0
   CharacterAnimator: {fileID: 1735823372}
-  maxHealth: 3
+  maxHealth: 2
   MinDamage: 1
   MaxDamage: 3
   BulletDelay: 0.33
