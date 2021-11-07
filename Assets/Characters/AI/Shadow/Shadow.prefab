@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: b7f7d1ab42253f24d973936641784674, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterState: 0
   CharacterAnimator: {fileID: 2381994504090901732}
-  maxHealth: 100
+  maxHealth: 150
   MinDamage: 0.9
   MaxDamage: 1.1
   BulletDelay: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterBody: {fileID: 3875500465226361973}
-  MoveSpeed: 225
+  MoveSpeed: 250
   RotationSpeed: 0.2
   DashSpeed: 0
   DashDelay: 0
