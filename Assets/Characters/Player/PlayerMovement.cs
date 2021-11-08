@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerMovement : CharacterMovement
 {
@@ -14,10 +13,14 @@ public class PlayerMovement : CharacterMovement
         transform.position = SpawnLocation;
     }
 
+    private void FixedUpdate()
+    {
+        ApplyMovement();
+        Rotate();
+    }
+
     private void RegisterEvents()
     {
-        EngineManager.Current.Events.EveryPhysicsUpdate += ApplyMovement;
-        EngineManager.Current.Events.EveryPhysicsUpdate += Rotate;
         PlayerInput.Events.OnLookDirection += ApplyRotation;
         PlayerInput.Events.OnLookPoint += LookAtPoint;
         PlayerInput.Events.OnDash += Dash;

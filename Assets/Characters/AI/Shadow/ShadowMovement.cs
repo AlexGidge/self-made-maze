@@ -1,9 +1,6 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
 using Random = UnityEngine.Random;
 
 public class ShadowMovement : CharacterMovement
@@ -18,8 +15,12 @@ public class ShadowMovement : CharacterMovement
 
     public void Start()
     {
-        EngineManager.Current.Events.EveryPhysicsUpdate += ApplyMovement;
         TriggerManager.Current.TriggerEvents.OnRoomEntered += RoomEntered;
+    }
+
+    private void Update()
+    {
+        ApplyMovement();
     }
 
     private void RoomEntered()

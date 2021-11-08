@@ -4979,7 +4979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterBody: {fileID: 1078952287445758298}
-  MoveSpeed: 7
+  MoveSpeed: 2.4
   RotationSpeed: 0.7
   DashSpeed: 175
   DashDelay: 0.9
@@ -5003,7 +5003,7 @@ MonoBehaviour:
   CharacterAnimator: {fileID: 1735823372}
   maxHealth: 2
   MinDamage: 1
-  MaxDamage: 3
+  MaxDamage: 5
   BulletDelay: 0.33
   InvulnerabilityTime: 1
   CurrentHealth: 0

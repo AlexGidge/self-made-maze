@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
 public class BulletController : MonoBehaviour
 {
@@ -20,6 +19,7 @@ public class BulletController : MonoBehaviour
 
     private float Damage;
 
+    public Guid Parent;
     private List<Guid> CharacterHits;
 
     [SerializeField] private Quaternion bulletDirection;
@@ -33,8 +33,21 @@ public class BulletController : MonoBehaviour
     private void Initialise()
     {
         CharacterHits = new List<Guid>();
+        Game.Current.GameEvents.OnNPCDied += NPCDied;
+    }
+    
+    private void OnDisable()
+    {
+        Game.Current.GameEvents.OnNPCDied -= NPCDied;
     }
 
+    private void NPCDied(Guid characterId)
+    {
+        if (characterId == Parent)
+        {
+            Destroy();
+        }
+    }
     IEnumerator Selfdestruct()
     {
         yield return new WaitForSeconds(lifetime);
@@ -47,9 +60,11 @@ public class BulletController : MonoBehaviour
         Destroy(gameObject);
     }
 
+
     public void FireBullet(Guid parent, Quaternion direction, float damage)
     {
         startLocation = transform.position;
+        Parent = parent;
         CharacterHits.Add(parent);
         Damage = damage;
         bulletDirection = direction;

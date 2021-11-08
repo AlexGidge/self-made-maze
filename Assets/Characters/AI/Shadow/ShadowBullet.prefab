@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1590452125760142229}
-  lifetime: 3
+  lifetime: 5
   bulletSpeed: 500
   ShootRange: 6
   bulletDirection: {x: 0, y: 0, z: 0, w: 0}

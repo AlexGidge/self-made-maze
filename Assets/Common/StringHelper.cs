@@ -1,7 +1,5 @@
 ﻿
-    using System;
-
-    public static class StringHelper
+     public static class StringHelper
     {
         public static string ConvertIntToHumanReadableString(int value)
         {

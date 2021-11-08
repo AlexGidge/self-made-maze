@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections;
-using Unity.VisualScripting;
+using Unity.Mathematics;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
 
 public class ShadowCombat : CharacterCombat
 {
@@ -12,6 +13,7 @@ public class ShadowCombat : CharacterCombat
     public GameObject Attack3Bullet;
 
     public float Attack3damage;
+    public int Attack1BulletCount;
     
     public AudioClip Attack1AudioClip;
     public AudioClip Attack3AudioClip;
@@ -30,6 +32,7 @@ public class ShadowCombat : CharacterCombat
     public override void Die()
     {
         Game.Current.GameEvents.LevelCompleted();
+        Game.Current.GameEvents.NPCDied(CharacterID);
         //TODO: Particle Effect
         //TODO: Animation
         //TODO: End game event + listener on player to add shadow
@@ -47,15 +50,14 @@ public class ShadowCombat : CharacterCombat
     {
         //TODO: Attack
         Debug.Log("Attack 1 Started.");
-        for (int x = 0; x < 10; x++)
+        for (int x = 0; x < Attack1BulletCount; x++)
         {
-            yield return new WaitForSeconds(0.25f);
-            FireBullet(Attack1Bullet, GenerateQuaternion());
+            yield return new WaitForSeconds(0.22f);
+            FireBullet(Attack1Bullet, GenerateQuaternion(x));
             BulletAudioSource.PlayOneShot(Attack1AudioClip);
         }
     }
-    
-    
+
     private IEnumerator Attack2()
     {
         Debug.Log("Attack 2 Started.");
@@ -80,9 +82,11 @@ public class ShadowCombat : CharacterCombat
             yield return new WaitForSeconds(11);
     }
 
-    private Quaternion GenerateQuaternion()
+    private Quaternion GenerateQuaternion(int bullet)
     {
-        return transform.rotation;
+        //TODO: Learn about quaternions then rewrite.
+        Quaternion direction = quaternion.RotateZ(15*bullet);
+        return direction;
     }
 
     public void StartSequenceCycle()

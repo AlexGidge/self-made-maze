@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +6,6 @@ public class PlayerCombat : CharacterCombat
     public PlayerInput PlayerInput;
     public PlayerMovement PlayerMovement;
     public GameObject BulletPrefab;
-
     public GameObject PlayerShadow;
     
     protected override void Initialise()
@@ -16,7 +14,12 @@ public class PlayerCombat : CharacterCombat
         Game.Current.GameEvents.OnLevelCompleted += LevelCompleted;
         CharacterState = CharacterStateType.Alive;
     }
-    
+
+    private void Update()
+    {
+        Fire();
+    }
+
     private void LevelCompleted()
     {
         PlayerShadow.SetActive(true);
@@ -26,7 +29,6 @@ public class PlayerCombat : CharacterCombat
     {
         PlayerInput.Events.OnWeaponFired += StartFiring;
         PlayerInput.Events.OnWeaponFireStopped += StopFiring;
-        EngineManager.Current.Events.EveryUpdate += Fire;
     }
 
     private void OnDisable()
@@ -38,7 +40,6 @@ public class PlayerCombat : CharacterCombat
     {
         PlayerInput.Events.OnWeaponFired -= StartFiring;
         PlayerInput.Events.OnWeaponFireStopped -= StopFiring;
-        EngineManager.Current.Events.EveryUpdate -= Fire;
         
     }
 
